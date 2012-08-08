@@ -1,5 +1,5 @@
 Given /^my account exists as a "(.*?)" who seeks "(.*?)"$/ do |gender, other_gender|
-  FactoryGirl.create(:user, seeking: other_gender, gender: gender)
+  FactoryGirl.create(:user, email: "ads1234@columbia.edu", seeking: other_gender, gender: gender)
 end
 
 When /^I click the link "(.*?)"$/ do |link_name|

@@ -4,6 +4,18 @@ Given /^the following ([^"]*) exists*:$/ do |model, table|
   end
 end
 
-Then /^I should see the first (\d+) "(.*?)" seeking "(.*?)"$/ do |number, gender, other_gender|
-  pending # express the regexp above with the code you wish you had
+When /^I visit the matches page$/ do
+  visit users_path
+end
+
+Then /^I should see the users:$/ do |table|
+  table.hashes.each do |hash|
+    page.should have_content(hash[:username])
+  end
+end
+
+Then /^I should not see the users:$/ do |table|
+  table.hashes.each do |hash|
+    page.should_not have_content(hash[:username])
+  end
 end

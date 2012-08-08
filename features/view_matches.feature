@@ -1,8 +1,17 @@
 Feature: View users
+
   Scenario: View matches as a straight male
     Given the following user exist:
       | email                   | gender    | seeking | username  |
-      | asd321@columbia.edu     | Female    | Men     | asdf      |
-      | few3123@columbia.edu    | Female    | Men     | asdf      |
+      | asd321@columbia.edu     | Female    | Men     | foo       |
+      | few3123@columbia.edu    | Female    | Men     | bar       |
+      | few3133@columbia.edu    | Female    | Women   | berry     |
     Given I am signed in as a "Male" who seeks "Women"
-    Then I should see the first 5 "Females" seeking "Men"
+    When I visit the matches page
+    Then I should see the users:
+      | username  |
+      | foo       |
+      | bar       |
+    And I should not see the users:
+      | username  |
+      | berry     |

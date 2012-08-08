@@ -20,5 +20,6 @@ Given /^I am signed in as a "(.*?)" who seeks "(.*?)"$/ do |gender, other_gender
     When I go to the home page
     When I click the link "Login"
     And I complete the sign in form
+    Then I should be signed in
   }
 end
