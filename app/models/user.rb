@@ -25,7 +25,9 @@ class User < ActiveRecord::Base
   end
   
   def matches with_group = false
-    if gender == 'Male'
+    if gender == 'Male' && seeking == 'Women' && with_group
+      User.where(gender: 'Male', seeking: 'Men', group: with_group).where("id != ?", self.id)
+    elsif gender == 'Male'
       if seeking == 'Women'
         User.where(gender: 'Female', seeking: 'Men', group: with_group).where("id != ?", self.id)
       else

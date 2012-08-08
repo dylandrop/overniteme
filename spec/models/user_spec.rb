@@ -52,5 +52,25 @@ describe User do
       }
       matches.length.should == 5
     end
+    
+    it "returns couples seeking a female for a straight female with 'group' enabled" do
+      user = FactoryGirl.create(:user, :gender => 'Female', :seeking => 'Men')
+      matches = user.matches(true)
+      matches.should each { |match|
+        match.gender.should == 'Male'
+        match.seeking.should == 'Women'
+      }
+      matches.length.should == 2
+    end
+    
+    it "returns couples seeking a male for a straight male with 'group' enabled" do
+      user = FactoryGirl.create(:user, :gender => 'Female', :seeking => 'Men')
+      matches = user.matches(true)
+      matches.should each { |match|
+        match.gender.should == 'Male'
+        match.seeking.should == 'Men'
+      }
+      matches.length.should == 2
+    end
   end
 end
