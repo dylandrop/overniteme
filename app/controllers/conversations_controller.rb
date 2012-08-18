@@ -1,7 +1,8 @@
 class ConversationsController < ApplicationController
   before_filter :authenticate_user!
   def new
-    @conversation = Conversation.new(from_id: current_user.id, to_id: params[:user].id)
+    @conversation = Conversation.new(from: current_user.id, to: params[:user].id)
+    @message = @conversation.message.build
   end
 
   def create
