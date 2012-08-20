@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808235710) do
+ActiveRecord::Schema.define(:version => 20120820215623) do
 
   create_table "conversations", :force => true do |t|
     t.integer  "from_id"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20120808235710) do
     t.string   "subject"
     t.text     "content"
     t.integer  "from_id"
-    t.integer  "to_id"
     t.integer  "conversation_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
