@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -11,6 +12,10 @@ class User < ActiveRecord::Base
   
   validate :gender_is_selected
   validate :seeking_is_selected
+
+  def conversations
+    Conversation.where("to_id = ? OR from_id = ?", id, id)
+  end
   
   def gender_is_selected
     if !GENDERS.include?(gender)

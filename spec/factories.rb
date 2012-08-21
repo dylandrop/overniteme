@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
   
   factory :user do
-    username 'asddfsa'
+    username 'my_username'
     email { generate(:email) }
     gender 'Male'
     seeking 'Women'
