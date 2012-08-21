@@ -1,0 +1,6 @@
+<%= f.fields_for :messages do |g| %>
+  <%= g.label :subject %>
+  <%= g.text_field :subject %>
+  <%= g.label :content %>
+  <%= g.text_field :content %>
+<% end %>
