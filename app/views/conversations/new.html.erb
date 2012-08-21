@@ -1,5 +1,7 @@
 <%= form_for @conversation do |f| %>
   <%= hidden_field_tag :to_id, @conversation.to.id %>
-  <%= render "messages_form", :f => f %>
+  <%= f.fields_for :messages do |builder| %>
+    <%= render "messages_fields", :g => builder %>
+  <% end %>
   <%= f.submit "Send" %>
 <% end %>
