@@ -23,4 +23,21 @@ describe Conversation do
       conversation.should be_valid
     end
   end
+
+  describe "#link_title" do
+    before do
+      @me = FactoryGirl.create(:user, username: "Bob")
+      @other = FactoryGirl.create(:user, username: "Fred")
+    end
+
+    it "should give a title with the user it's from if I am receiving it" do
+      conversation = FactoryGirl.build(:conversation, from: @other, to: @me)
+      conversation.link_title(@me).should include(@other.username)
+    end
+
+    it "should give a title with the user it's from if I am sending it" do
+      conversation = FactoryGirl.build(:conversation, from: @me, to: @other)
+      conversation.link_title(@me).should include(@other.username)
+    end
+  end
 end

@@ -6,6 +6,14 @@ class Conversation < ActiveRecord::Base
   attr_accessible :messages_attributes, :from, :to
   validate :from_can_message_to
 
+  def link_title current_user
+    if to == current_user
+      "Conversation with #{from.username}"
+    else
+      "Conversation with #{to.username}"
+    end
+  end
+
   private
   def from_can_message_to
     if from.gender == "Male" && to.gender == "Female"
