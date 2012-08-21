@@ -4,4 +4,14 @@ class Conversation < ActiveRecord::Base
   has_many :messages
   accepts_nested_attributes_for :messages
   attr_accessible :messages_attributes, :from, :to
+  validate :from_can_message_to
+
+  private
+  def from_can_message_to
+    if from.gender == "Female" || (from.gender == "Male" && to.gender == "Male")
+      return
+    else
+      errors.add(:base, "You cannot create a conversation with this user.")
+    end
+  end
 end
