@@ -8,9 +8,7 @@ class Conversation < ActiveRecord::Base
 
   private
   def from_can_message_to
-    if from.gender == "Female" || (from.gender == "Male" && to.gender == "Male")
-      return
-    else
+    if from.gender == "Male" && to.gender == "Female"
       errors.add(:base, "You cannot create a conversation with this user.")
     end
   end
