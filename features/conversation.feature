@@ -8,4 +8,3 @@ Feature: Converse with a match
     When I click the link "Message foo"
     When I send "foo" a message
     Then I should see the conversation between me and "foo"
-    And "foo" should have received my message

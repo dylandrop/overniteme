@@ -1,4 +1,5 @@
 <%= form_for @conversation do |f| %>
+  <%= hidden_field_tag :to_id, @conversation.to.id %>
   <%= f.fields_for :messages do |g| %>
     <%= g.label :subject %>
     <%= g.text_field :subject %>

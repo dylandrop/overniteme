@@ -9,5 +9,7 @@ Then /^"(.*?)" should have received my message$/ do |arg1|
 end
 
 Then /^I should see the conversation between me and "(.*?)"$/ do |recipient|
-  page.should have_content("To: #{recipient}")
+  within "#user_to" do
+    page.should have_content("#{recipient}")
+  end
 end

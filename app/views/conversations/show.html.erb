@@ -1,6 +1,9 @@
-<%= @conversation.messages.each do |message| %>
-  From: <%= message.from.try(:username) %><br>
-  To: <%= message.to.try(:username) %><br>
+Conversation between 
+<span id="user_from"><%= @conversation.from.username %></span>
+and <span id="user_to"><%= @conversation.to.username %></span>
+<br><br>
+<% @conversation.messages.each do |message| %>
+  <%= message.from.try(:username) %><br>
   Subject: <%= message.subject %><br>
-  <%= message.content %>
+  <%= message.content %><br><Br>
 <% end %>
