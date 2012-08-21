@@ -18,4 +18,8 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id], include: [:messages])
   end
+
+  def index
+    @conversations = current_user.conversations.try(:order, "created_at DESC")
+  end
 end
