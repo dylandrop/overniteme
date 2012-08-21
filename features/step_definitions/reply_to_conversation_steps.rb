@@ -5,5 +5,7 @@ When /^I fill out the new message form with "(.*?)"$/ do |content|
 end
 
 Then /^I should see the message "(.*?)"$/ do |content|
-  page.should have_content(content)
+  within ".message-content" do
+    page.should have_content(content)
+  end
 end
