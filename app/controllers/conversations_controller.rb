@@ -17,6 +17,7 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id], include: [:messages])
+    @message = Message.new
   end
 
   def index

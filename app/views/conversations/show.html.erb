@@ -7,3 +7,8 @@ and <span id="user_to"><%= @conversation.to.username %></span>
   Subject: <%= message.subject %><br>
   <%= message.content %><br><Br>
 <% end %>
+<%= form_for @message do |builder| %>
+  <%= hidden_field_tag :conversation_id, @conversation.id %>
+  <%= render "messages_fields", g: builder %>
+  <%= builder.submit "Submit" %>
+<% end %>

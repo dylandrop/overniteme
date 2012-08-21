@@ -7,6 +7,5 @@ Feature: Reply to a conversation thread
       | bar      |
     When I visit the conversations page
     And I click the link "Conversation with foo"
-    Then I should see the conversation between me and "foo"
     When I fill out the new message form with "howdy"
     Then I should see the message "howdy"
