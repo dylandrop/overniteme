@@ -140,12 +140,11 @@ body {
   background-color: #716eb2;
 }
 a {
-  color: #0088cc;
+  color: #ffffff;
   text-decoration: none;
 }
 a:hover {
-  color: #005580;
-  text-decoration: underline;
+  color: #ffffff;
 }
 .row {
   margin-left: -20px;
@@ -362,7 +361,7 @@ h5,
 h6 {
   margin: 0;
   font-family: inherit;
-  font-weight: bold;
+  font-weight: lighter;
   color: inherit;
   text-rendering: optimizelegibility;
 }
