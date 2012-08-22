@@ -12,11 +12,27 @@
  *= require_tree .
  */
 .readable-text {
-  background-color: rgb(0, 0, 0);
+  padding: 15px;
   /* RGBa with 0.6 opacity */
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 116, 204, 0.6);
   /* For IE 5.5 - 7*/
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
   /* For IE 8*/
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+body {
+  background-color: black;
+}
+
+#main-img {
+  background-color: black;
+  background-image: url("<%= asset_path 'main.png' %>");
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 786px;
+  height: 508px;
+  bottom: 0;
+  right: 0;
+  z-index: -40;
 }
