@@ -5,6 +5,22 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+    body {
+      background-color: black;
+    }
+    #main-img {
+      background-color: black;
+      background-image: url("<%= asset_path 'main.png' %>");
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 786px;
+      height: 508px;
+      bottom: 0;
+      right: 0;
+      z-index: -40;
+    }
+  </style>
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
@@ -35,7 +51,8 @@
     </div>
     <%= yield %>
   </div>
-
+  <div id="main-img">
+  </div>
 
 </body>
 </html>
