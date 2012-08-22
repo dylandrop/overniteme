@@ -19,6 +19,7 @@
         <div class="nav-collapse">
           <ul class="nav">
             <% if current_user %>
+              <li><%= link_to "Matches", users_path %></li>
               <li><%= link_to "Conversations", conversations_path %></li>
             <% end %>
             <li><%= link_to "Contact", contact_path %></li>

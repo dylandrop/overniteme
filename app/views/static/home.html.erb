@@ -1,29 +1,40 @@
-<br><br>
-<div class="row-fluid">
-  <div class="span5">
-    <p class="lead">
-      Overnite.me is Columbia’s newest community of healthy, attractive singles looking for a place to stay, overnight. 
-    </p>
-  </div>
-</div>
-<br><br><br><br>
-<div class="row-fluid">
-  <div class="span5">
-    <p class="readable-text">
-      We know you have lots of work to finish this weekend and can’t afford to spend all your free time searching for that special someone. Quickly and effortlessly meet people with whom to share in the most seminal of human experiences. No pressure, no rush -- everything unfolds according your schedule and your desires.
-    </p>
-  </div>
-</div>
-<br><br>
-<div class="row-fluid">
-  <div class="span5">
-    <div class="btn btn-primary btn-large">
-      <% if user_signed_in? %>
-        <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>        
-      <% else %>
-        <%= link_to 'Login', new_user_session_path %>
-      <% end %>
+<% if !current_user %>
+  <br><br>
+  <div class="row-fluid">
+    <div class="span5">
+      <p class="lead">
+        Overnite.me is Columbia’s newest community of healthy, attractive singles looking for a place to stay, overnight. 
+      </p>
     </div>
   </div>
-</div>
+  <br><br><br><br>
+  <div class="row-fluid">
+    <div class="span5">
+      <p class="readable-text">
+        We know you have lots of work to finish this weekend and can’t afford to spend all your free time searching for that special someone. Quickly and effortlessly meet people with whom to share in the most seminal of human experiences. No pressure, no rush -- everything unfolds according your schedule and your desires.
+      </p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row-fluid">
+    <div class="span5">
+      <div class="btn btn-primary btn-large">
+        <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>        
+        <% else %>
+          <%= link_to 'Login', new_user_session_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <div class="row-fluid">
+    <div class="span5">
+      <p class="lead">
+        Get started! View your <%= link_to "potential matches", users_path, class: "purple" %>.
+      </p>
+    </div>
+  </div>
+<% end %>
 <div id="main-img"></div>

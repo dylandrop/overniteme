@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
-gem 'sqlite3'
 gem 'devise'
 gem 'will_paginate'
 
@@ -18,8 +17,13 @@ group :development do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 3.3.0'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :test do
