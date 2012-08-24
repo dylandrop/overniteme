@@ -31,20 +31,25 @@ class User < ActiveRecord::Base
   
   def matches
     if seeking == 'Either'
-      return User.where(seeking: 'Men') if gender == 'Male'
-      return User.where(seeking: 'Women') if gender == 'Female'
+      return other_users_who_are_seeking('Men') if gender == 'Male'
+      return other_users_who_are_seeking('Women') if gender == 'Female'
     elsif gender == 'Male'
       if seeking == 'Women'
-        User.where(gender: 'Female', seeking: 'Men').where("id != ?", self.id)
+        other_users_who_are_seeking('Men').where(gender: 'Female')
       else
-        User.where(gender: 'Male', seeking: 'Men').where("id != ?", self.id)
+        other_users_who_are_seeking('Men').where(gender: 'Male')
       end
     else
       if seeking == 'Men'
-        User.where(gender: 'Male', seeking: 'Women').where("id != ?", self.id)
+        other_users_who_are_seeking('Women').where(gender: 'Male')
       else
-        User.where(gender: 'Female', seeking: 'Women').where("id != ?", self.id)
+        other_users_who_are_seeking('Women').where(gender: 'Female')
       end
     end
+  end
+
+  private
+  def other_users_who_are_seeking gender
+    User.where("seeking = ? OR seeking = ?", 'Either', gender).where("id != ?", self.id)
   end
 end
