@@ -49,5 +49,23 @@ describe User do
       }
       matches.length.should == 5
     end
+
+    it "should return all gay females and straight males for a bisexual female" do
+      user = FactoryGirl.create(:user, :gender => 'Female', :seeking => 'Either')
+      matches = user.matches
+      matches.should each { |match|
+        match.seeking.should == 'Women'
+      }
+      matches.length.should == 9
+    end
+
+    it "should return all gay males and straight females for a bisexual male" do
+      user = FactoryGirl.create(:user, :gender => 'Male', :seeking => 'Either')
+      matches = user.matches
+      matches.should each { |match|
+        match.seeking.should == 'Men'
+      }
+      matches.length.should == 9
+    end
   end
 end
