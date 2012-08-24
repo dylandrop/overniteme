@@ -29,16 +29,6 @@
   </div>
 
   <div class="control-group">
-    
-    <div class="controls">
-      <label class="checkbox">
-        <%= f.check_box :group %>
-        <%= f.label "Are you signing up as a couple?" %>
-      </label>
-    </div>
-  </div>
-
-  <div class="control-group">
     <%= f.label :gender, class: "control-label", for: "user_gender" %>
     <div class="controls">
       <%= f.select :gender, User::GENDERS, :include_blank => true %>

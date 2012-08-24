@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820215623) do
+ActiveRecord::Schema.define(:version => 20120824000230) do
 
   create_table "conversations", :force => true do |t|
     t.integer  "from_id"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(:version => 20120820215623) do
     t.datetime "updated_at",                             :null => false
     t.string   "username"
     t.string   "gender"
-    t.boolean  "group"
     t.text     "description"
     t.string   "seeking"
   end
