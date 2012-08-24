@@ -6,6 +6,8 @@ describe User do
   it { should allow_value('fdsa@columbia.edu').for(:email) }
   it { should allow_value('fdsa@barnard.edu').for(:email) }
   it { should_not allow_value('fdsa@gmail.com').for(:email) }
+  it {should ensure_inclusion_of(:gender).in_array(%w[Male Female]) }
+  it {should ensure_inclusion_of(:seeking).in_array(%w[Men Women Either]) }
 
   describe ".matches" do
     before :each do
