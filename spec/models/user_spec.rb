@@ -2,6 +2,11 @@ require 'spec_helper'
 require 'rspec_multi_matchers'
 
 describe User do
+
+  it { should allow_value('fdsa@columbia.edu').for(:email) }
+  it { should allow_value('fdsa@barnard.edu').for(:email) }
+  it { should_not allow_value('fdsa@gmail.com').for(:email) }
+
   describe ".matches" do
     before :each do
       6.times { FactoryGirl.create(:user, :gender => 'Female', :seeking => 'Men') }

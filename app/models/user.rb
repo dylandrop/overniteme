@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :gender, :seeking, :description
   
-  validates_format_of :email, with: /^\w+@columbia\.edu$/
+  validates_format_of :email, with: /^\w+(@columbia\.edu|@barnard\.edu)$/
   
   GENDERS = ['Male','Female']
   SEEKING = ['Men','Women','Either']
