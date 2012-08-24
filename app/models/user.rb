@@ -30,7 +30,10 @@ class User < ActiveRecord::Base
   end
   
   def matches
-    if gender == 'Male'
+    if seeking == 'Either'
+      return User.where(seeking: 'Men') if gender == 'Male'
+      return User.where(seeking: 'Women') if gender == 'Female'
+    elsif gender == 'Male'
       if seeking == 'Women'
         User.where(gender: 'Female', seeking: 'Men').where("id != ?", self.id)
       else
