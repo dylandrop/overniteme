@@ -1,7 +1,34 @@
-<%= @user.username %>
-<%= @user.gender %>
-
-Seeking: <%= @user.seeking %>
-
-Description:
-<%= @user.description %>
+<div class="profile-img-main">
+  <%= image_tag @user.profile_picture.url %>
+</div>
+<div class="row-fluid">
+  <div class="span5">
+    <h1 class="purple"><%= @user.username %></h1>
+  </div>
+</div>
+<br>
+<div class="row-fluid">
+  <div class="span5">
+    <h3 class="orange">
+      <%= @user.gender %><br>
+      Seeking: <%= @user.seeking %>
+    </h3>
+  </div>
+</div>
+<br>
+<div class="row-fluid">
+  <div class="span5">
+    Description:
+    <%= @user.description %>
+  </div>
+</div>
+<br><br>
+<div class="row-fluid">
+  <div class="span5">
+    <% if @user.can_be_messaged_by current_user %>
+      <i class="icon-envelope icon-white"></i>
+      <%= link_to "Message #{@user.username}", new_conversation_path(user: @user) %>
+    <% end %>
+  </div>
+</div>
+<br><br><br>
