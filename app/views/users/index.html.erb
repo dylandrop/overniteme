@@ -1,10 +1,17 @@
-<%= will_paginate @users %>
-<table class="table table-striped">
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= link_to user.username, user %></td>
-      <td><%= user.description %></td>
-      <td><%= link_to "Message #{user.username}", new_conversation_path(user: user) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row-fluid">
+  <%= will_paginate @users %>
+  <table class="table">
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.username, user %></td>
+        <td><%= user.description %></td>
+        <td>
+          <% if user.can_be_messaged_by current_user %>
+            <i class="icon-envelope icon-white"></i>
+            <%= link_to "Message #{user.username}", new_conversation_path(user: user) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

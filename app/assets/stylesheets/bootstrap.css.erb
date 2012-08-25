@@ -675,7 +675,6 @@ table {
   line-height: 18px;
   text-align: left;
   vertical-align: top;
-  border-top: 1px solid #dddddd;
 }
 .table th {
   font-weight: bold;
@@ -755,7 +754,7 @@ table {
 }
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-  background-color: #f5f5f5;
+  background-color: #716EB2;
 }
 table .span1 {
   float: none;
@@ -1898,7 +1897,7 @@ input[type="submit"].btn.btn-mini {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../img/glyphicons-halflings.png");
+  background-image: url("<%= asset_path 'glyphicons-halflings.png' %>");
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -1907,7 +1906,7 @@ input[type="submit"].btn.btn-mini {
   *margin-left: 0;
 }
 .icon-white {
-  background-image: url("../img/glyphicons-halflings-white.png");
+  background-image: url("<%= asset_path 'glyphicons-halflings-white.png' %>");
 }
 .icon-glass {
   background-position: 0      0;
@@ -1919,6 +1918,8 @@ input[type="submit"].btn.btn-mini {
   background-position: -48px 0;
 }
 .icon-envelope {
+  margin-top: 2px;
+  margin-right: 5px;
   background-position: -72px 0;
 }
 .icon-heart {
@@ -2566,7 +2567,6 @@ input[type="submit"].btn.btn-mini {
   display: block;
 }
 .tabs-below > .nav-tabs {
-  border-top: 1px solid #ddd;
 }
 .tabs-below > .nav-tabs > li {
   margin-top: -1px;

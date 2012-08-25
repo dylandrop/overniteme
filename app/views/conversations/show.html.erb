@@ -1,17 +1,27 @@
-Conversation between 
-<span id="user_from"><%= @conversation.from.username %></span>
-and <span id="user_to"><%= @conversation.to.username %></span>
+<section class="row-fluid">
+  <h2>
+    Conversation between 
+    <span id="user_from"><%= @conversation.from.username %></span>
+    and <span id="user_to"><%= @conversation.to.username %></span>
+  </h2>
+</section>
 <br><br>
 <% @conversation.messages.each do |message| %>
-  <%= message.from.try(:username) %><br>
-  Subject: <%= message.subject %><br>
-  <span class="message-content">
-    <%= message.content %>
-  </span>
+  <div class="row-fluid">
+    <%= message.from.try(:username) %><br>
+    Subject: <%= message.subject %><br>
+    <span class="message-content">
+      <%= message.content %>
+    </span>
   <br><Br>
+  </div>
 <% end %>
 <%= form_for @message do |builder| %>
   <%= hidden_field_tag :conversation_id, @conversation.id %>
   <%= render "messages_fields", g: builder %>
-  <%= builder.submit "Submit" %>
+  <div class="control-group">
+    <div class="controls">
+      <%= builder.submit "Submit", class: "btn" %>
+    </div>
+  </div>
 <% end %>

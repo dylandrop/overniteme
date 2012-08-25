@@ -48,6 +48,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def can_be_messaged_by other_user
+    return false if other_user.gender == 'Male' && gender == 'Female'
+    true
+  end
+
   private
   def other_users_who_are_seeking gender
     User.where("seeking = ? OR seeking = ?", 'Either', gender).where("id != ?", self.id)

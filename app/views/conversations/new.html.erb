@@ -1,7 +1,11 @@
-<%= form_for @conversation do |f| %>
+<%= form_for @conversation, :html => { :class => "form-horizontal" } do |f| %>
   <%= hidden_field_tag :to_id, @conversation.to.id %>
   <%= f.fields_for :messages do |builder| %>
     <%= render "messages_fields", :g => builder %>
   <% end %>
-  <%= f.submit "Send" %>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit "Send", class: "btn" %>
+    </div>
+  </div>
 <% end %>
