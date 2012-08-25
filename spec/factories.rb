@@ -11,5 +11,6 @@ FactoryGirl.define do
     description 'This is a test'
     password 'asdf123'
     password_confirmation 'asdf123'
+    confirmed_at Time.now
   end
 end

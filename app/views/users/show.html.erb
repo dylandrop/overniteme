@@ -1,7 +1,6 @@
 <%= @user.username %>
-<% if !@user.group %>
-  Gender: <%= @user.gender %>
-<% end %>
+<%= @user.gender %>
+
 Seeking: <%= @user.seeking %>
 Is this a couples thing? <%= @user.group? ? 'Yes' : 'No' %>
 
