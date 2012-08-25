@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   end
 
   def can_be_messaged_by other_user
-    return false if other_user.gender == 'Male' && gender == 'Female'
+    return false if (other_user.gender == 'Male' && gender == 'Female') || self == other_user
     true
   end
 
