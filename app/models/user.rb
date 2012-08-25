@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validate :gender_is_selected
   validate :seeking_is_selected
   validates :profile_picture, :attachment_presence => true
+  validates :username, presence: true, length: { maximum: 20 }
+  validates :description, presence: true, length: { maximum: 500 }
 
   has_attached_file :profile_picture,
     :styles => {
