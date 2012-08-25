@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require 'fakefs/safe'
 
 Spork.prefork do
   require 'cucumber/rails'

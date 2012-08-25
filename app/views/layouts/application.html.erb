@@ -24,6 +24,11 @@
               <li><%= link_to "Conversations", conversations_path %></li>
             <% end %>
             <li><%= link_to "Contact", contact_path %></li>
+            <% if user_signed_in? %>
+              <%= link_to destroy_user_session_path, :method => :delete do %>
+                <div class="btn btn-primary">Logout</div>
+              <% end %>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -4,6 +4,9 @@ gem 'rails', '3.2.6'
 gem 'devise'
 gem 'will_paginate'
 gem 'tlsmail'
+gem 'paperclip'
+gem 'aws-s3'
+gem 'aws-sdk'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -34,4 +37,6 @@ group :test do
   gem 'shoulda-matchers'
   gem "spork", "~> 1.0.0.rc3"
   gem 'rspec_multi_matchers'
+  gem 'webmock'
+  gem 'fakefs', :require => 'fakefs/safe'
 end

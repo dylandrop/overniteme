@@ -18,13 +18,11 @@
   <br><br>
   <div class="row-fluid">
     <div class="span5">
-      <div class="btn btn-primary btn-large">
-        <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>        
-        <% else %>
-          <%= link_to 'Login', new_user_session_path %>
+        <% if !user_signed_in? %>  
+          <%= link_to new_user_session_path do %>
+            <div class="btn btn-primary btn-large">Login</div>
+          <% end %>
         <% end %>
-      </div>
     </div>
   </div>
 
