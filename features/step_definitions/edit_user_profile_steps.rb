@@ -1,12 +1,15 @@
 Then /^I should be on the edit profile page$/ do
-  pending # express the regexp above with the code you wish you had
+  current_path.should == edit_user_registration_path
 end
 
 When /^I fill out the edit profile form with the following info:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  table.hashes.first.each do |key, value|
+    fill_in key.titleize, with: value
+  end
+  fill_in "Current password", with: 'asdf123'
+  click_button "Update"
 end
 
 When /^I visit my profile$/ do
-  pending # express the regexp above with the code you wish you had
+  click_link "Profile"
 end
