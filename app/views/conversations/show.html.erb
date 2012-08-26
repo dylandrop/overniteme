@@ -1,8 +1,8 @@
 <section class="row-fluid">
   <h2>
     Conversation between 
-    <span id="user_from"><%= @conversation.from.username %></span>
-    and <span id="user_to"><%= @conversation.to.username %></span>
+    <span id="user_from"><%= link_to @conversation.from.username, @conversation.from, class: "purple" %></span>
+    and <span id="user_to"><%= link_to @conversation.to.username, @conversation.to, class: "purple" %></span>
   </h2>
 </section>
 <br><br>
