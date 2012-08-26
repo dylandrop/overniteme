@@ -1,12 +1,12 @@
 <div class="control-group">
   <%= g.label :subject, class: "control-label", for: "conversation_messages_attributes_0_subject" %>
   <div class="controls">
-    <%= g.text_field :subject %>
+    <%= g.text_field :subject, id: "subject" %>
   </div>
 </div>
 <div class="control-group">
   <%= g.label :content, class: "control-label", for: "conversation_messages_attributes_0_content" %>
   <div class="controls">
-    <%= g.text_area :content, rows: "10" %>
+    <%= g.text_area :content, id: "content", rows: "10" %>
   </div>
 </div>

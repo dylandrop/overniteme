@@ -1,6 +1,6 @@
 When /^I send "(.*?)" a message$/ do |arg1|
-  fill_in "Subject", with: "Hey"
-  fill_in "Content", with: "What's up"
+  fill_in "subject", with: "Hey"
+  fill_in "content", with: "What's up"
   click_button "Send"
 end
 

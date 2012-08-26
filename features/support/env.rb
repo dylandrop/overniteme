@@ -24,8 +24,7 @@ Spork.prefork do
 
   Cucumber::Rails::Database.javascript_strategy = :truncation
 
-  
-  FakeWeb.allow_net_connect = false
+  FakeWeb.allow_net_connect = true
 
   (1..5).each do |id| 
     FakeWeb.register_uri(:put, "https://overniteme-test.s3.amazonaws.com/original/#{id.to_s}/rails-icon.jpg",
