@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :profile_picture,
     :styles => {
-       :small  => "300x300>" 
+       :small  => "80x80>" 
     },
     :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml",
