@@ -77,14 +77,21 @@
 
   <div class="control-group">
     <div class="controls">
-      <div class="btn"><%= f.submit "Update" %></div>
+      <%= f.submit "Update", class: "btn" %>
     </div>
   </div>
   
 <% end %>
 
-<h3>Cancel my account</h3>
+<br><br><br>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => {:confirm => "Are you sure?"}, :method => :delete %>.</p>
+<form class="form-horizontal">
+  <div class="control-group">
+    <div class="controls">
+      Unhappy?
+      <%= link_to "Cancel my account", registration_path(resource_name), :class => "purple", :data => {:confirm => "Are you sure?"}, :method => :delete %>
+    </div>
+  </div>
+</form>
 
-<%= link_to "Back", :back %>
+<br><br>
