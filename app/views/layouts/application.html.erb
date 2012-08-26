@@ -26,10 +26,10 @@
             <li><%= link_to "Contact", contact_path %></li>
             <% if user_signed_in? %>
               <%= link_to user_path(current_user) do %>
-                <div class="btn btn-inverse">Profile</div>
+                <div class="btn btn-inverse"><i class="icon-pad icon-user icon-white"></i>Profile</div>
               <% end %>
               <%= link_to edit_user_registration_path do %>
-                <div class="btn btn-inverse">Settings</div>
+                <div class="btn btn-inverse"><i class="icon-pad icon-cog icon-white"></i>Settings</div>
               <% end %>
               <%= link_to destroy_user_session_path, :method => :delete do %>
                 <div class="btn btn-primary">Logout</div>
