@@ -1,8 +1,10 @@
+<div class="digg-pagination">
+  <%= will_paginate @users, page_links: false %>
+</div>
 <div class="row-fluid">
   <% if @users.empty? %>
     We're brand new! We don't have any matches for you yet, but check back in a few days.
   <% end %>
-  <%= will_paginate @users %>
   <table class="table">
     <% @users.each do |user| %>
       <tr>
