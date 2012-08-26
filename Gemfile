@@ -37,6 +37,6 @@ group :test do
   gem 'shoulda-matchers'
   gem "spork", "~> 1.0.0.rc3"
   gem 'rspec_multi_matchers'
-  gem 'webmock'
+  gem 'fakeweb'
   gem 'fakefs', :require => 'fakefs/safe'
 end
